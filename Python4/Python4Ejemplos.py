@@ -1,56 +1,42 @@
 import numpy as np
-
-x = np.array([1, 2, 3])         # Vector Fila 1 x 3
-print("array x \n " + str(x))
-y = np.arange(5)                # Vector Fila 1 x 5 (0 al 4)
-print("array y \n " + str(y))
-z = np.zeros((2, 3))            # Matriz cero de 2x3
-print("array z \n " + str(z))
+import random
 
 #Creacion de matrices con numpy
-s = np.random.randint(10, size=(5, 5))
-#matriz de 5x5 con valores enteros aleatorios con maximo de 10-1
-print("matriz s: \n " + str(s))
+A = np.random.randint(-10,10, size=(15, 15))
+B = np.random.randint(-10,10, size=(15, 15))
+#matriz de 15x15 con valores enteros aleatorios de -10 a 10
 
-a = np.array([[1, 2],                    #matriz 3 x 2
-               [3, 4],
-               [5, 6]])
+print("matriz A: \n " + str(A))
+
+print("matriz B: \n " + str(B))
+
+l = random.sample(range(1,100), 25)
+print("Diagonal A:")
+np.fill_diagonal(A,l)
+print("\n " + str(A))
+
+print("Diagonal B:")
+np.fill_diagonal(B,l)
 
 #suma de matrices
-print("matriz a \n " + str(a))
-print ("suma a+a \n " + str(a+a))
+print ("suma A+B \n " + str(A+B))
 
-#producto por un escalar
-print("matriz 3*a \n " + str(3*a))
-#negativo de una matriz
-print("matriz -a  \n " + str(-a))
+#producto de matrices
+print("matriz A*B \n " + str(A*B))
 
+#resta de matrices
+print("matriz A-B  \n " + str(A-B))
+print("matriz B-A  \n " + str(B-A))
 
-a = np.array([[1, 0,2, -1]]) # Creacion de matriz con numpy
-b= np.array([[1], [0],[2], [-1]])
-print("matriz a \n " + str(a))
-print("matriz b \n " + str(b))
+print("A transpuesta \n " + str(A.transpose()))         #Transpuesta de Matriz
+print("B transpuesta \n " + str(B.transpose()))         #Transpuesta de Matriz
 
-#punto elemento a elemento
-print("producto elemento a elemento a*a \n " + str(a * a))
+c=np.random.randint(1,20,size=(1,20))
+print("Vector c: \n " + str(c))
+d=np.random.randint(1,20,size=(20,1))
+print("Vector d: \n" + str(d))
 
 print('Producto Punto')
-print(np.dot(a,b))
+print(np.dot(c,d))
 
-
-A = np.array([[1, 0,2], [2,3, -1],[4,0,2]])
-B = np.array([[1, 0,2], [2,3, -1],[4,0,2]])
-C = np.array([[1, 0,2], [2,3, -1],[4,0,2],[1,1,1],[3,6,0]])
-D = np.array([[1, 0,2,1,2,5], [2,3, -1,0,0,1],[4,0,2,1,2,4]])
-
-#Producto Matricial
-print("producto matricial  AB \n " + str(A*B))
-
-
-A = np.array([[1, 1, 0, 2, 0],
-               [1, 1, 0, 3, 6],
-               [1, 1, 1, 2, 3]])
-
-print("A: \n " + str(A))
-print("A transpuesta \n " + str(A.transpose()))         #Transpuesta de Matriz
 
