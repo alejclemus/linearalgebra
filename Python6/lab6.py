@@ -25,8 +25,6 @@ b = np.array([[1,1,0,1],
               [0,1,0,0],
               [0,1,0,0]])
 
-C = np.random.randint(10,10, size=(100, 100)
-D = np.random.randint(10,10, size=(100, 1) 
                                           
 b1= np.array([[1],
                [2],
@@ -39,8 +37,7 @@ b2= np.array([[1],
 
 print("matriz A: \n" + str(A))
 print("matriz B: \n" + str(b))
-print("matriz C: \n" + str(b))
-print("matriz D: \n" + str(b))
+
 print('\n------------------------------------------------------')  
 # Calcule los determinantes e inversas
 print("EJERICIO 1:")
@@ -85,3 +82,12 @@ print(ReglaCrammer(A, b1.transpose()))
 print("cramer: "+str(tm.time()-inicio))
 
 print("C𝑥 = 𝑏2")
+
+print('\n------------------------------------------------------')  
+print("EJERICIO 3:")
+print('------------------------------------------------------\n') 
+
+##c = np.random.randint(10,10, size=(100, 100)    
+##d = np.random.randint(10,10, size=(100, 1)                
+##print("matriz C: \n" + str(c))
+##print("vector D: \n" + str(d))
