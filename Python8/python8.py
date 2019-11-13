@@ -1,6 +1,5 @@
 
 import numpy as np
-
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
@@ -71,10 +70,21 @@ def Markov(A,k):
 k=20
 
 #Matriz de transicion
-A = np.array([[0.7, 0.2],
-              [0.3, 0.8]])
+A = np.array([[0.3, 0.5],
+              [0.7, 0.5]])
 
+B = np.array([[0.7, 0.1, 0.2],
+              [0.2, 0.8, 0.1],
+              [0.1, 0.1, 0.7]])
 
+C = np.array([[0.2, 0.1, 0.4],
+              [0.1, 0.5, 0.2],
+              [0.7, 0.4, 0.4]])
+
+D = np.array([[0.4, 0.1, 0.2, 0.1],
+              [0, 0.1, 0.3, 0.3],
+              [0.4, 0.7, 0.4, 0.4],
+              [0.2, 0.1, 0.1, 0.2]])
 ############################################################################
 
 
@@ -83,7 +93,35 @@ for x in range(1, k):
     Markov(A, x)
 
 plt.axis([0, k, -0.3, 1])
-plt.savefig("grafica.png")
-plt.savefig("grafica.png")
+plt.savefig("graficaA.png")
+plt.savefig("graficaA.png")
 plt.show()
 
+for x in range(1, k):
+    Markov(B, x)
+    
+plt.axis([0, k, -0.3, 1])
+plt.savefig("graficaB.png")
+plt.savefig("graficaB.png")
+plt.show()
+
+for x in range(1, k):
+    Markov(C, x)
+    
+plt.axis([0, k, -0.3, 1])
+plt.savefig("graficaC.png")
+plt.savefig("graficaC.png")
+plt.show()
+
+for x in range(1, k):
+    Markov(D, x)
+    
+plt.axis([0, k, -0.3, 1])
+plt.savefig("graficaD.png")
+plt.savefig("graficaD.png")
+plt.show()
+
+print('\n------------------------------------------------------')  
+print("EJERICIO 2:")
+print('------------------------------------------------------\n') 
+print("matriz A iteracion '4', matriz B iteracion '1', matriz C iteracion '4', matriz D iteracion '3'")
