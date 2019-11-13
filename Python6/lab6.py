@@ -87,7 +87,56 @@ print('\n------------------------------------------------------')
 print("EJERICIO 3:")
 print('------------------------------------------------------\n') 
 
-##c = np.random.randint(10,10, size=(100, 100)    
-##d = np.random.randint(10,10, size=(100, 1)                
-##print("matriz C: \n" + str(c))
-##print("vector D: \n" + str(d))
+c = np.random.randint(10,10, size=(100, 100)    
+d = np.random.randint(10,10, size=(100, 1)                
+print("matriz C: \n" + str(c))
+print("vector D: \n" + str(d))
+
+invc = np.linalg.inv(c)                     #con numpy
+invc2 = sp.Matrix(c).inv()                  #con sympy
+
+
+invd = np.linalg.pinv(d)                     
+invd2 = sp.Matrix(b).pinv()                  
+
+
+inicio=tm.time()
+print(np.dot(invc, d))
+print("numpy: "+str(tm.time()-inicio))
+
+inicio=tm.time()
+print(np.dot(invc2, d))
+print("sympy: "+str(tm.time()-inicio))
+
+inicio=tm.time()
+print(ReglaCrammer(c, d.transpose()))
+print("cramer: "+str(tm.time()-inicio))
+
+print('\n------------------------------------------------------')  
+print("EJERICIO 4:")
+print('------------------------------------------------------\n') 
+
+c = np.random.randint(10,10, size=(500, 500)                 
+print("matriz C: \n" + str(c))
+
+
+invc = np.linalg.inv(c)                     #con numpy
+invc2 = sp.Matrix(c).inv()                  #con sympy               
+
+
+inicio=tm.time()
+print(np.dot(invc, d))
+print("numpy: "+str(tm.time()-inicio))
+
+inicio=tm.time()
+print(np.dot(invc2, d))
+print("sympy: "+str(tm.time()-inicio))
+
+inicio=tm.time()
+print(ReglaCrammer(c, d.transpose()))
+print("cramer: "+str(tm.time()-inicio))
+
+print('\n------------------------------------------------------')  
+print("EJERICIO 4:")
+print('------------------------------------------------------\n') 
+print("Simpy se tarda practicamente lo mismo que Numpy, mientras que Cramer se tarda aprox x32 mas tiempo y no resuelve operaciones como raices por lo que imprime una gran respuesta ")
